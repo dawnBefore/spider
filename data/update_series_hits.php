@@ -10,6 +10,7 @@ for ($i = 1; $i <= 100; $i++) {
 
 	$content = Utils::crawlContent($url, true);
 	if (!$content) continue;
+	// 选择好对的simple_html_dom版本，php7.1运行之前的老版本会有内存问题，需到github下载最新版本
 	$html = str_get_html($content);
 
 	$items = $html->find('.s_list li');
